@@ -19,14 +19,15 @@ function DiaryWrite() {
         setDirHandle(getGlobalDir());
         console.log(`폴더를 불러왔다 그 이름은: ${dirHandle}`);
         console.log(`아니면 혹시 ${getGlobalDir()}`);
+        // 이상하다 dirHandle은 아직도 null인데 getGlobalDir()은 아직 
       } else {
         console.log(`폴더 null인데? (diaryWrite)`);
       }
       if(getGlobalDate() != null) setDate(getGlobalDate());
       
+
+      loadFromFile(false);
       
-
-
       
 
     })();
@@ -84,14 +85,25 @@ function DiaryWrite() {
     }
   };
 
-  const loadFromFile = async () => {
+  const loadFromFile = async (notInit) => {
+
+    let dirHandleInit;
+    let fileInit;
+
+    if(notInit){ 
+      dirHandleInit = dirHandle;
+      fileInit = getFileName();
+    } else {
+      dirHandleInit = getGlobalDir();
+      fileInit = `${getGlobalDate() || "my-diary"}.txt`;
+    }
     try {
-      if (!dirHandle) {
+      if (!dirHandleInit) {
         alert("먼저 폴더를 선택해주세요!");
         return;
       }
 
-      const fileHandle = await dirHandle.getFileHandle(getFileName());
+      const fileHandle = await dirHandleInit.getFileHandle(fileInit);
       const file = await fileHandle.getFile();
       const text = await file.text();
 
@@ -100,7 +112,7 @@ function DiaryWrite() {
       setTitle(titleLine.replace("제목: ", ""));
       setContent(contentLines.join("\n").replace("내용:", "").trim());
 
-      alert(`${getFileName()} 파일이 불러와졌습니다.`);
+      alert(`${fileInit} 파일이 불러와졌습니다.`);
     } catch (err) {
       console.error(err);
       alert("파일을 찾을 수 없습니다. 해당 날짜의 일기가 없는 것 같습니다.");
