@@ -1,0 +1,150 @@
+/* 기본 레이아웃 */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Noto Sans KR", sans-serif;
+  background: #fafafa;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+}
+
+.buttons button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+.buttons button:hover {
+  background: #f0f0f0;
+}
+
+/* 본문 */
+.layout {
+  display: flex;
+  gap: 20px;
+}
+
+.editor {
+  flex: 2;
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.editor .row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.editor input[type="date"],
+.editor input[type="text"] {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.editor button {
+  padding: 6px 12px;
+  background: #4a6cf7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.editor button:hover {
+  background: #3b5ad1;
+}
+
+.editor textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.info {
+  text-align: right;
+  margin-top: 5px;
+  font-size: 0.85rem;
+  color: gray;
+}
+
+/* 사이드바 */
+.sidebar {
+  flex: 1;
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.search {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.entry {
+  padding: 8px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.entry.active {
+  background: #e0e7ff;
+  border-color: #a5b4fc;
+}
+
+.entry .title {
+  font-weight: bold;
+}
+
+.entry .date {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.entry .delete {
+  float: right;
+  font-size: 0.8rem;
+  color: #c00;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.entry .delete:hover {
+  text-decoration: underline;
+}
+
+/* 푸터 */
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: gray;
+}
