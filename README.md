@@ -1,16 +1,29 @@
-# React + Vite
+# This project is for practicing making diary
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+There is bunch of scrap code since I copied many from chatGPT & also edited many too!!!!
 
-Currently, two official plugins are available:
+This is not all made by AI!!... most is...
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# If you want to use
 
-## React Compiler
+Download Node.js
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+open command line(cmd)
 
-## Expanding the ESLint configuration
+go to folder (cd desktop/my-diary-app  <---- your current downloaded foler)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+type "npm run dev"
+
+since I'm begginer I don't know what else to do.
+
+
+# PURPOSE 
+
+This project made for understanding javascript. + I need fine diary app THAT DON'T SPAMMING PRO UPGRADE VERSION. + for fun.
+
+# Future
+
+I should go back to mmy job for duty... I may or may not update.
+
+
+
