@@ -26,4 +26,4 @@ I should go back to mmy job for duty... I may or may not update.
 
 # Update(25.11.23)
 
-Updated AI emotion analyzing.
+Updated AI emotion analyzing.(you should put your api key...)
