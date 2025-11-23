@@ -10,6 +10,7 @@ function DiaryWrite() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [dirHandle, setDirHandle] = useState(null);
+  const [emotion, setEmotion] = useState("");
 
   // 받은 directory를 전역변수에 넣었다. 이래도 되려나? 나중에 뭐 배우면 그 때 바꾸지 뭐 허허
   useEffect(() => {
@@ -119,6 +120,39 @@ function DiaryWrite() {
     }
   };
 
+  // Analyze Emotion, gemini-2.5
+  const analyzingEmotion= async() => {
+
+    const prompt = `글에 있어 어떤 감정이 들어있는지 파악해줘\n
+    형식은 다음과 같이 써줘\n
+    (감정): (숫자)%\n
+    파악해야 할 글은 다음과 같아:
+    "${content}"`;
+    const output = emotion;
+
+    setEmotion("Loading...");
+
+    const API_KEY = "AIzaSyAOlDOrlgccC9UcON3CM-vlHlvzUwd8yss"; // <-- Put your free API key here
+
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+
+    const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            contents: [{ role: "user", parts: [{ text: prompt }] }]
+        })
+    });
+
+    const data = await response.json();
+
+    if (data.candidates && data.candidates[0]) {
+        setEmotion(data.candidates[0].content.parts[0].text);
+    } else {
+        setEmotion("Error:\n" + JSON.stringify(data, null, 2));
+    }
+  };
+
   return (
     <div className="max-w-2xl mx-auto bg-white shadow rounded-xl p-6">
       <h2 className="text-xl font-bold mb-4">✏️ 일기 작성</h2>
@@ -169,7 +203,23 @@ function DiaryWrite() {
         >
           📂 불러오기
         </button>
+        <button
+          onClick={analyzingEmotion}
+          className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+        >
+          🤖 감정 분석
+        </button>
+
+        
+
+
       </div>
+      {emotion && (
+        <div className="border-t pt-4 whitespace-pre-wrap">
+          <h3 className="font-bold text-lg mb-2">📖 감정 내용</h3>
+          <p>{emotion}</p>
+        </div>
+      )}
     </div>
   );
 }

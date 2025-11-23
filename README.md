@@ -10,14 +10,13 @@ Download Node.js
 
 open command line(cmd)
 
-go to folder (cd desktop/my-diary-app  <---- your current downloaded foler)
+go to folder (cd desktop/my-diary-app <---- your current downloaded foler)
 
 type "npm run dev"
 
 since I'm begginer I don't know what else to do.
 
-
-# PURPOSE 
+# PURPOSE
 
 This project made for understanding javascript. + I need fine diary app THAT DON'T SPAMMING PRO UPGRADE VERSION. + for fun.
 
@@ -25,5 +24,6 @@ This project made for understanding javascript. + I need fine diary app THAT DON
 
 I should go back to mmy job for duty... I may or may not update.
 
+# Update(25.11.23)
 
-
+Updated AI emotion analyzing.
