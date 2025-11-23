@@ -132,7 +132,7 @@ function DiaryWrite() {
 
     setEmotion("Loading...");
 
-    const API_KEY = "AIzaSyAOlDOrlgccC9UcON3CM-vlHlvzUwd8yss"; // <-- Put your free API key here
+    const API_KEY = ""; // <-- Put your free API key here
 
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
 
